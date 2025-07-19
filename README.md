@@ -37,7 +37,9 @@ After creating the service principal, you must assign appropriate roles to it so
 
 ### Create a Service Principal using Azure CLI
 ***Create a Service Principal***
+```sh
 az ad sp create-for-rbac --name <service-principal-name>
+```
 This command will return a JSON object containing the following information: appId - the application (client) ID; password: The client secret (use this for authentication); tenant: The Azure AD tenant ID.
 ```sh
 {
