@@ -1,0 +1,1 @@
+# Azure_Auth_ServicePrincipal_ManagedIdenty
