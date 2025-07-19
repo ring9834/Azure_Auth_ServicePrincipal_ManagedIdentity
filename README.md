@@ -35,6 +35,31 @@ Record the Application (Client) ID, Directory (Tenant) ID, and Client Secret.
 ***Assign Roles/Permissions to the Service Principal***
 After creating the service principal, you must assign appropriate roles to it so it can access the required Azure resources. Navigate to the Azure resource (such as an Azure Storage Account or Key Vault). Go to Access Control (IAM). Click + Add > Add Role Assignment. Select the appropriate Role (such as Contributor, Reader). In the Select field, search for your Service Principal and assign the role.
 
+### Create a Service Principal using Azure CLI
+***Create a Service Principal***
+az ad sp create-for-rbac --name <service-principal-name>
+This command will return a JSON object containing the following information: appId - the application (client) ID; password: The client secret (use this for authentication); tenant: The Azure AD tenant ID.
+```sh
+{
+  "appId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "displayName": "my-service-principal",
+  "password": "your-client-secret",
+  "tenant": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+}
+```
+
+By default, this above command does not return the principalId in its output. We can get by:
+```sh
+principalId = $(az ad sp show --id your-app-id --query objectId -o tsv)
+```
+The result is like this: principalId="aef1cdb5-b4ae-4e47-bf44-e5cd31401bc5"
+
+***Assign Roles to the Service Principal***
+```sh
+az role assignment create --assignee $principalId --role Contributor --scope /subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.Web/sites/<app-service-name>
+```
+Note:If you're using --assignee directly without specifying whether it's an appId or principalId, Azure CLI will try to resolve this automatically.
+
 ### Authenticate using the Service Principal in C#
 Below is the C# code to authenticate using the Service Principal and use it to interact with an Azure Blob Storage.
 ```sh
