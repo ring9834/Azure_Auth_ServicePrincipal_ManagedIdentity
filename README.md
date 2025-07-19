@@ -1,11 +1,10 @@
 # C# Usage of Service Principle, Managed Identity(System-Designed Identity, User-Assigned Idendity)
-This conent is mainly to introduce how to use Service Principle, Managed Identity in C# to access Azure Resource such as the APIs deployed in Azure App Service.
-
-Most of the time, it's a little bit confusing for new learners to differenciate the concepts and usage of Service Principle, System-Designed Identity, User-Assigned Idendity, the code, with many comments in the code, I provided here is aimed to assist people in better understanding how to use them more easily in real world practices.
+This conent is mainly to introduce how to use Service Principal and Managed Identity in C# to access Azure Resources such as the APIs deployed in Azure App Service. As most of the time, it's a little bit confusing for new learners to differentiate the concepts and usage of Service Principal, System-Designed Identity, and User-Assigned Identity. The code, with many comments in the code, I provided here is aimed at assisting people in better understanding how to use them more easily in real-world practices.
 
 ## Differences between Service Principle, System-Designed Identity, and User-Assigned Idendity
 ![Differences](https://lh3.googleusercontent.com/pw/AP1GczNeiJJP4umW-ufGg9TvOfGQYRg5MBBOU4doIPNTrywJJ8Djox22Ip_KZDWaYILoHBOKV-iAX8tsX4QU1GUv8XhIxfIMwiT0mvChtUFgnzOBW9b0TjkIGBU8RwDjSu7T3g6hXSht7w1glFPnhScfvBU=w1165-h548-s-no-gm?authuser=0)
 
+## Service Principle
 ### Key Uses of Service Principal
 Authentication for Applications: Non-Interactive Access - Service Principals allow applications or scripts to authenticate to Azure without requiring user interaction. This is crucial for automated processes, background jobs, or services running without human intervention.
 
@@ -37,7 +36,9 @@ After creating the service principal, you must assign appropriate roles to it so
 
 ### Create a Service Principal using Azure CLI
 ***Create a Service Principal***
+```sh
 az ad sp create-for-rbac --name <service-principal-name>
+```
 This command will return a JSON object containing the following information: appId - the application (client) ID; password: The client secret (use this for authentication); tenant: The Azure AD tenant ID.
 ```sh
 {
