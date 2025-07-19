@@ -6,6 +6,7 @@ Most of the time, it's a little bit confusing for new learners to differenciate 
 ## Differences between Service Principle, System-Designed Identity, and User-Assigned Idendity
 ![Differences](https://lh3.googleusercontent.com/pw/AP1GczNeiJJP4umW-ufGg9TvOfGQYRg5MBBOU4doIPNTrywJJ8Djox22Ip_KZDWaYILoHBOKV-iAX8tsX4QU1GUv8XhIxfIMwiT0mvChtUFgnzOBW9b0TjkIGBU8RwDjSu7T3g6hXSht7w1glFPnhScfvBU=w1165-h548-s-no-gm?authuser=0)
 
+## Service Principle
 ### Key Uses of Service Principal
 Authentication for Applications: Non-Interactive Access - Service Principals allow applications or scripts to authenticate to Azure without requiring user interaction. This is crucial for automated processes, background jobs, or services running without human intervention.
 
