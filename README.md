@@ -1,7 +1,5 @@
 # C# Usage of Service Principle, Managed Identity(System-Designed Identity, User-Assigned Idendity)
-This conent is mainly to introduce how to use Service Principal, Managed Identity in C# to access Azure Resource such as the APIs deployed in Azure App Service.
-
-Most of the time, it's a little bit confusing for new learners to differenciate the concepts and usage of Service Principal, System-Designed Identity, User-Assigned Idendity, the code, with many comments in the code, I provided here is aimed to assist people in better understanding how to use them more easily in real-world practices.
+This conent is mainly to introduce how to use Service Principal and Managed Identity in C# to access Azure Resources such as the APIs deployed in Azure App Service. As most of the time, it's a little bit confusing for new learners to differentiate the concepts and usage of Service Principal, System-Designed Identity, and User-Assigned Identity. The code, with many comments in the code, I provided here is aimed at assisting people in better understanding how to use them more easily in real-world practices.
 
 ## Differences between Service Principle, System-Designed Identity, and User-Assigned Idendity
 ![Differences](https://lh3.googleusercontent.com/pw/AP1GczNeiJJP4umW-ufGg9TvOfGQYRg5MBBOU4doIPNTrywJJ8Djox22Ip_KZDWaYILoHBOKV-iAX8tsX4QU1GUv8XhIxfIMwiT0mvChtUFgnzOBW9b0TjkIGBU8RwDjSu7T3g6hXSht7w1glFPnhScfvBU=w1165-h548-s-no-gm?authuser=0)
